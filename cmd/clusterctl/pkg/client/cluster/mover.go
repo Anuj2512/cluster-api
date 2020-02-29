@@ -129,10 +129,10 @@ func (o *objectMover) checkProvisioningCompleted(graph *objectGraph) error {
 			continue
 		}
 
-		if clusterObj.Spec.ControlPlaneRef != nil && !clusterObj.Status.ControlPlaneReady {
-			errList = append(errList, errors.Errorf("cannot start the move operation while the control plane for %q %s/%s is not yet ready", clusterObj.GroupVersionKind(), clusterObj.GetNamespace(), clusterObj.GetName()))
-			continue
-		}
+		// if clusterObj.Spec.ControlPlaneRef != nil && !clusterObj.Status.ControlPlaneReady {
+		// 	errList = append(errList, errors.Errorf("cannot start the move operation while the control plane for %q %s/%s is not yet ready", clusterObj.GroupVersionKind(), clusterObj.GetNamespace(), clusterObj.GetName()))
+		// 	continue
+		// }
 	}
 
 	// Checking all the machine have a NodeRef
